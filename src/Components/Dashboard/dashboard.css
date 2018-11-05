@@ -1,0 +1,30 @@
+.remark {
+  display: flex;
+  position: absolute;
+  width: 50%;
+  top: 5%;
+  padding: 24px;
+}
+.sendBtn {
+  position: absolute;
+  top: 10%;
+}
+.mainRemark {
+  display: flex;
+  padding: 0 24px;
+  flex-direction: column;
+  flex: 1;
+}
+.insideMain {
+  display: flex;
+}
+.btnDiv {
+  display: flex;
+  margin-right: 30px;
+}
+.dateField {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 400px;
+  height: 10%;
+}
