@@ -14,24 +14,24 @@ export const callGetProfileData = async () => {
 export const callMarkAttendanceApi = async remarkObj => {
   const token = localStorage.getItem("userAuthToken");
   const data = await Axios.post(`${URls.API_URL}Employee/MarkAttendance`, {
-    employeeId: "9876",
-    lat: 0,
-    lng: 0,
-    area: "mumbai2",
-    deviceType: "mobile",
-    tstamp: "2018-10-03T05:21:53.125Z",
-    cid: "FalconAVL",
-    centerId: 6,
-    remarks: "test5",
+    employeeId: remarkObj.employeeId,
+    lat: remarkObj.lat,
+    lng: remarkObj.lng,
+    area: remarkObj.area,
+    deviceType: remarkObj.deviceType,
+    tstamp: remarkObj.tstamp,
+    cid: remarkObj.cid,
+    centerId: remarkObj.centerId,
+    remarks: remarkObj.remarks,
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json"
     }
   });
+  return data;
 };
 
 export const callGetAttendanceApi = async (startTime, endTime) => {
-  debugger;
   const token = localStorage.getItem("userAuthToken");
   const year = new Date(startTime).getFullYear();
   const month = new Date(startTime).getMonth() + 1;
