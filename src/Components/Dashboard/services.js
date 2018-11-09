@@ -33,6 +33,7 @@ export const callMarkAttendanceApi = async remarkObj => {
 
 export const callGetAttendanceApi = async (startTime, endTime) => {
   const token = localStorage.getItem("userAuthToken");
+
   const year = new Date(startTime).getFullYear();
   const month = new Date(startTime).getMonth() + 1;
   const date = new Date(startTime).getDate();
@@ -41,7 +42,7 @@ export const callGetAttendanceApi = async (startTime, endTime) => {
   const month2 = new Date(endTime).getMonth() + 1;
   const date2 = new Date(endTime).getDate();
 
-  const data = await Axios.get(
+  return await Axios.get(
     `${
       URls.API_URL
     }Employee/Attendance/0018?StartTime=${year}-${month}-${date}&EndTime=${year2}-${month2}-${date2}`,
@@ -51,5 +52,4 @@ export const callGetAttendanceApi = async (startTime, endTime) => {
       }
     }
   );
-  return data;
 };

@@ -36,5 +36,5 @@ export class MapContainer extends PureComponent {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "YOUR_API_KEY"
+  apiKey: "AIzaSyDSuFKwfZeytZSMqY5qz7eS31jrD9iKtFw"
 })(MapContainer);
